@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="150c30a5-5b55-4fa8-8b3c-4a1270ce2353">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     siswa.`no_pendaftaran` AS siswa_no_pendaftaran,
+     siswa.`nik` AS siswa_nik,
+     siswa.`nama` AS siswa_nama,
+     nilai.`bahasa_indonesia` AS nilai_bahasa_indonesia,
+     nilai.`bahasa_inggris` AS nilai_bahasa_inggris,
+     nilai.`ipa` AS nilai_ipa,
+     nilai.`mtk` AS nilai_mtk,
+     nilai.`nim` AS nilai_nim
+FROM
+     `siswa` siswa INNER JOIN `nilai` nilai ON siswa.`nik` = nilai.`nik`
+ORDER BY
+     nilai.`nim` ASC]]>
+	</queryString>
+	<field name="siswa_nik" class="java.lang.String"/>
+	<field name="siswa_nama" class="java.lang.String"/>
+	<field name="siswa_no_pendaftaran" class="java.lang.String"/>
+	<field name="nilai_bahasa_indonesia" class="java.lang.String"/>
+	<field name="nilai_bahasa_inggris" class="java.lang.String"/>
+	<field name="nilai_ipa" class="java.lang.String"/>
+	<field name="nilai_mtk" class="java.lang.String"/>
+	<field name="nilai_nim" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="11" width="458" height="27" uuid="9b90b267-53e2-4012-840f-e747b135a602"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENDAFTAR BERDASARKAN NIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="44" width="187" height="25" uuid="d3a95529-9d3c-4787-886f-9764996de8cd"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[SMK NEGERI 1 GAMBUT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<textField pattern="dd-MMM-yyyy">
+				<reportElement x="89" y="12" width="100" height="20" uuid="6b65c69e-0815-4824-9242-96f4780d0972"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="13" width="100" height="20" uuid="7757541d-6f5b-4b81-a6f1-2f89f8d0d268"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal	:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="100" height="20" uuid="7a575655-267b-4c9d-8ed9-77e4665f0504"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="126" height="20" uuid="d00e806d-97d3-489a-a7da-25a797d39424"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="51" height="20" uuid="1d64e27d-597b-4df1-8e94-6d9da2c7f697"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO Daftar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="69" height="20" uuid="fddeccef-c48b-4770-9a5d-c1f1134f4e0f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[B. Indonesia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="38" height="20" uuid="d9d02e5c-7f87-448c-b881-18a947bacf25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IPA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="511" y="0" width="41" height="20" uuid="a23a6783-c4cc-4df4-8009-b4722da7e0ff"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIM]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-2" width="552" height="1" uuid="b3d26a1d-b4ac-48b2-b537-90c6b93a7026"/>
+			</line>
+			<line>
+				<reportElement x="0" y="21" width="552" height="1" uuid="972356ac-c8ba-43de-9749-72abf214b1e1"/>
+			</line>
+			<staticText>
+				<reportElement x="458" y="0" width="53" height="20" uuid="dfc754a5-151d-48ea-b823-25262aed5b19"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matematika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="2" width="50" height="20" uuid="36afe6c2-4b66-4320-bb31-8afb5f87838e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[B. Inggris]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="0" width="31" height="20" uuid="62f81608-38e8-470b-b864-9edeb1afee7e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_bahasa_inggris}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="30" height="20" uuid="599d8619-c190-4ada-a8b5-68ccffbad8fa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_bahasa_indonesia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="41" height="20" uuid="ee71b287-cda8-4d9f-ab0c-81ca7b8b2a84"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_mtk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="100" height="20" uuid="4b241630-c567-4d1a-a027-bfcbe96511da"/>
+				<textFieldExpression><![CDATA[$F{siswa_nik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="-6" width="100" height="20" uuid="0200a715-7e8b-436b-98d4-04c5a177d894"/>
+				<textFieldExpression><![CDATA[$F{siswa_nik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="511" y="0" width="41" height="20" uuid="9df1e987-dfef-464f-8233-aa28c529bc79"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_nim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="0" width="51" height="20" uuid="488495a7-edbe-4616-837c-18a2b4cc02df"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{siswa_no_pendaftaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="38" height="20" uuid="1acb0274-c883-47fc-81ad-49f077fd0650"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nilai_ipa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="129" height="20" uuid="7d9d09c8-e5bf-49bf-893d-c28f785e9a21"/>
+				<textFieldExpression><![CDATA[$F{siswa_nama}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="21" width="552" height="1" uuid="ca3c4940-6e77-4581-86f4-db23d7393ef7"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="0" width="550" height="1" uuid="491637dc-8e36-441e-8c31-f42774159810"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
